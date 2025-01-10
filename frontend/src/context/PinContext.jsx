@@ -14,12 +14,21 @@ export const PinProvider = ({ children }) => {
     async function allPins() {
         try {
             setdataloding(true);
-            const { data } = await axios.get("/api/pin/all");
+            const { data } = await axios.get("/api/pin/all", {
+                proxy: {
+                    host: 'localhost',
+                    port: 4000
+                }
+            });
             setPins(data);
             setdataloding(false);
 
         } catch (error) {
-            toast.error(error.response.data.message);
+            if (axios.isAxiosError(error)) {
+                toast.error(error.message);
+            } else {
+                toast.error("An unknown error occurred");
+            }
             setdataloding(false);
         }
     }

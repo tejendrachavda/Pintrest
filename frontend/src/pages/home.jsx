@@ -5,11 +5,11 @@ import { LoadingAnimation } from '../components/loding';
 import Masonry from '@mui/lab/Masonry';
 
 function Home() {
-  const { allpins , pins, dataloading } = Pin();
+  const { allpins, pins, dataloading } = Pin();
 
-  useEffect(() =>{
-    allpins    
-  },[  dataloading ])
+  useEffect(() => {
+    allpins
+  }, [])
 
   return (
     <div className='p-5 flex gap-5 flex-wrap md:p-10 lg:p-10'>
