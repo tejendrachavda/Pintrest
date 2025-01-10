@@ -7,8 +7,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://pintrest-backend-j8sw.onrender.com",
-
+        // target: "https://pintrest-backend-j8sw.onrender.com",
+        target: "http://localhost:4000",
       }
     }
   }
